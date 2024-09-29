@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazzee Marketplace</title>
+    <style>
+        /* Simple and basic styles for structure */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .user-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .user-group div {
+            width: 30%;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .user-group div h2 {
+            margin-bottom: 10px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jazzee Job Marketplace</h1>
+        <p>The Marketplace for Universities, Students, and Employers</p>
+    </header>
+
+    <div class="container">
+        <div class="user-group">
+            <div id="university-section">
+                <h2>Universities</h2>
+                <button onclick="displayUniversityForm()">Create Profile</button>
+                <div id="university-form" class="form-section" style="display:none;">
+                    <h3>Create University Profile</h3>
+                    <input type="text" id="university-name" placeholder="University Name">
+                    <textarea id="university-description" placeholder="University Description"></textarea>
+                    <button onclick="submitUniversity()">Submit</button>
+                </div>
+            </div>
+
+            <div id="student-section">
+                <h2>Students</h2>
+                <button onclick="displayStudentForm()">Create Profile</button>
+                <div id="student-form" class="form-section" style="display:none;">
+                    <h3>Create Student Profile</h3>
+                    <input type="text" id="student-name" placeholder="Name">
+                    <input type="email" id="student-email" placeholder="Email">
+                    <textarea id="student-skills" placeholder="Skills and Accomplishments"></textarea>
+                    <button onclick="submitStudent()">Submit</button>
+                </div>
+            </div>
+
+            <div id="employer-section">
+                <h2>Employers</h2>
+                <button onclick="displayEmployerForm()">Create Job Posting</button>
+                <div id="employer-form" class="form-section" style="display:none;">
+                    <h3>Create Job Posting</h3>
+                    <input type="text" id="employer-name" placeholder="Company Name">
+                    <input type="text" id="job-title" placeholder="Job Title">
+                    <textarea id="job-description" placeholder="Job Description"></textarea>
+                    <button onclick="submitJob()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jazzee. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Display and hide form functions
+        function displayUniversityForm() {
+            document.getElementById('university-form').style.display = 'block';
+        }
+
+        function displayStudentForm() {
+            document.getElementById('student-form').style.display = 'block';
+        }
+
+        function displayEmployerForm() {
+            document.getElementById('employer-form').style.display = 'block';
+        }
+
+        // Basic submit functions with alerts for demo
+        function submitUniversity() {
+            let name = document.getElementById('university-name').value;
+            let description = document.getElementById('university-description').value;
+            alert('University Profile Created: ' + name + '\n' + description);
+        }
+
+        function submitStudent() {
+            let name = document.getElementById('student-name').value;
+            let email = document.getElementById('student-email').value;
+            let skills = document.getElementById('student-skills').value;
+            alert('Student Profile Created: ' + name + '\nEmail: ' + email + '\nSkills: ' + skills);
+        }
+
+        function submitJob() {
+            let company = document.getElementById('employer-name').value;
+            let title = document.getElementById('job-title').value;
+            let description = document.getElementById('job-description').value;
+            alert('Job Posted by ' + company + ':\nTitle: ' + title + '\nDescription: ' + description);
+        }
+    </script>
+
+</body>
+</html>
